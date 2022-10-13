@@ -20,17 +20,21 @@ module.exports = {
       // Make sure that they are prepared in the Figma and follow the naming primary/secondary/gray-${number}
       // Example of correctly prepared colors in Figma — https://user-images.githubusercontent.com/20713191/143586876-5e834233-9639-4166-9811-b00e63820d98.png
       // Example of incorrectly prepared colors in Figma — https://user-images.githubusercontent.com/20713191/143586974-6986149f-aee3-450c-a1dd-26e73e3aca02.png
-      // black: '',
-      // white: '',
-      // primary: {
-      //   1: '',
-      // },
-      // secondary: {
-      //   1: '',
-      // },
-      // gray: {
-      //   1: '',
-      // },
+      black: '#1A1A1A',
+      white: '#FFFFFF',
+      purple: '#E300BD',
+      grey: {
+        1: '#0D0D0D',
+        2: '#1A1A1A',
+        3: '#262626',
+        4: '#333333',
+        5: '#4D4D4D',
+        6: '#666666',
+        7: '#808080',
+        8: '#999999',
+        9: '#CCCCCC',
+        10: '#E6E6E6',
+      },
     }),
     screens: {
       '2xl': { max: '1919px' },
