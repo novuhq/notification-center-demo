@@ -1,5 +1,14 @@
 /* TODO: Add global styles: font-size, color, and other if needed */
 @layer base {
+  html,
+  body {
+    @apply bg-grey-2;
+  }
+
+  #__next {
+    @apply flex min-h-screen flex-col bg-gradient-to-b from-opacity-black to-black;
+  }
+
   body {
     @apply min-w-[320px] font-sans antialiased;
     -webkit-tap-highlight-color: transparent;

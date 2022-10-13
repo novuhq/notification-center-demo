@@ -6,12 +6,12 @@ import Link from 'components/shared/link';
 
 // Example of the code — https://user-images.githubusercontent.com/20713191/144215307-35538500-b9f0-486d-abed-1a14825bb75c.png
 const styles = {
-  base: 'inline-flex items-center justify-center text-center transition-colors duration-200 leading-none outline-none',
+  base: 'inline-flex items-center justify-center text-center transition-colors duration-200 leading-none outline-none appearance-none',
 
   size: {},
 
   theme: {
-    rounded: 'p-3 rounded-full border border-grey-4',
+    rounded: 'p-3 rounded-full border border-grey-4 sm:p-2',
   },
 };
 
