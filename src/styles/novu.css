@@ -1,0 +1,3 @@
+.infinite-scroll-component > div {
+  @apply border border-dashed border-grey-5;
+}

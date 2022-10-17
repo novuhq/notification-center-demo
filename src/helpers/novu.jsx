@@ -15,8 +15,16 @@ const theme = {
     notificationItem: {
       unseen: {
         background: '#262626',
+        timeMarkFontColor: '#999',
         notificationItemBeforeBrandColor: '#FFE14D',
       },
+      seen: {
+        background: 'transparent',
+        timeMarkFontColor: '#999',
+      },
+    },
+    popover: {
+      arrowColor: '#1A1A1A',
     },
     loaderColor: '#FFE14D',
   },
@@ -32,7 +40,12 @@ const Novu = () => {
       subscriberId={process.env.NEXT_PUBLIC_NOVU_SUBSCRIBER_ID}
       applicationIdentifier={process.env.NEXT_PUBLIC_NOVU_APP_ID}
     >
-      <PopoverNotificationCenter colorScheme="dark" theme={theme} onNotificationClick={onClick}>
+      <PopoverNotificationCenter
+        offset={20}
+        theme={theme}
+        colorScheme="dark"
+        onNotificationClick={onClick}
+      >
         {({ unseenCount }) => (
           <>
             <BellIcon className="w-6 cursor-pointer" aria-label="Notifications bell icon" />
