@@ -16,16 +16,16 @@ const Header = () => (
         <Logo className="w-[150px] xs:w-[120px]" />
       </Link>
       <NavigationIllustration className="mx-8 max-w-[510px] sm:hidden" />
-      <div className="ml-auto flex items-center space-x-5 sm:space-x-4">
+      <div className="ml-auto flex items-center space-x-5 sm:space-x-3">
         <Button theme="rounded" type="button">
           <span className="sr-only">Search icon</span>
-          <MagnifierIcon className="w-5 sm:w-3" aria-hidden />
+          <MagnifierIcon className="w-5" aria-hidden />
         </Button>
         <Button theme="rounded" type="button">
           <span className="sr-only">Light theme icon</span>
-          <LightThemeIcon className="w-5 sm:w-3" aria-hidden />
+          <LightThemeIcon className="w-5" aria-hidden />
         </Button>
-        <div className="flex h-[46px] w-[46px] items-center justify-center rounded-full border border-grey-4 bg-white sm:h-[30px] sm:w-[30px]">
+        <div className="flex h-[46px] w-[46px] items-center justify-center rounded-full border border-grey-4 bg-white sm:h-[38px] sm:w-[38px]">
           <Novu />
         </div>
       </div>
