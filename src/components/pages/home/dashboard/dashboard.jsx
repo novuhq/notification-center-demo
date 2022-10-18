@@ -23,7 +23,12 @@ const Dashboard = () => (
         <Percentage79Illustration className="h-auto w-[400px] max-w-full" aria-hidden />
       </li>
     </ul>
-    <CPUIllustration className="h-auto w-[830px] max-w-full" aria-hidden />
+    <div className="relative">
+      <CPUIllustration className="h-auto w-[830px] max-w-full" aria-hidden />
+      <label className="absolute bottom-[52.555%] -right-28 rotate-90 sm:bottom-1/2 sm:-right-24">
+        <input className="styled-slider" type="range" />
+      </label>
+    </div>
     <div className="flex space-x-10 sm:space-x-5">
       <div>
         <PieChartIllustration className="h-auto w-[400px] max-w-full" aria-hidden />
