@@ -1,7 +1,6 @@
-import { NovuProvider, PopoverNotificationCenter } from '@novu/notification-center';
+import { NovuProvider, NotificationCenter } from '@novu/notification-center';
+import dynamic from 'next/dynamic';
 import React, { useCallback } from 'react';
-
-import BellIcon from 'icons/bell.inline.svg';
 
 const theme = {
   dark: {
@@ -30,8 +29,17 @@ const theme = {
   },
 };
 
+const NotificationCenterFooter = () => (
+  <footer className="text-center text-xs text-grey-5">
+    Powerd by{' '}
+    <a className="text-white" href="https://novu.co/" target="_blank" rel="noreferrer">
+      Novu
+    </a>
+  </footer>
+);
+
 const Novu = () => {
-  const onClick = useCallback((notification) => {
+  const onNotificationClick = useCallback((notification) => {
     window.location.href = notification.cta.data.url;
   }, []);
 
@@ -40,26 +48,17 @@ const Novu = () => {
       subscriberId={process.env.NEXT_PUBLIC_NOVU_SUBSCRIBER_ID}
       applicationIdentifier={process.env.NEXT_PUBLIC_NOVU_APP_ID}
     >
-      <PopoverNotificationCenter
+      <NotificationCenter
         offset={20}
         theme={theme}
         colorScheme="dark"
-        onNotificationClick={onClick}
-      >
-        {({ unseenCount }) => (
-          <>
-            <BellIcon className="w-6 cursor-pointer" aria-label="Notifications bell icon" />
-            {unseenCount ? (
-              <span
-                className="absolute top-0 right-0 z-10 block h-3 w-3 rounded-full border border-white bg-purple"
-                aria-label="Icon number of unread notifications"
-              />
-            ) : null}
-          </>
-        )}
-      </PopoverNotificationCenter>
+        footer={NotificationCenterFooter}
+        onNotificationClick={onNotificationClick}
+      />
     </NovuProvider>
   );
 };
 
-export default Novu;
+export default dynamic(() => Promise.resolve(Novu), {
+  ssr: false,
+});

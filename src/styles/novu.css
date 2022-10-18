@@ -1,3 +1,7 @@
 .infinite-scroll-component > div {
   @apply border border-solid border-grey-3;
 }
+
+button[data-test-id='user-preference-cog'] {
+  @apply hidden;
+}

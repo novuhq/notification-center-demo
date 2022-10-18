@@ -2,6 +2,7 @@ import React from 'react';
 
 import Dashboard from 'components/pages/home/dashboard';
 import Sidebar from 'components/pages/home/sidebar';
+import Novu from 'helpers/novu';
 import LayoutMain from 'layouts/layout-main';
 
 const Home = () => (
@@ -10,6 +11,7 @@ const Home = () => (
     <div className="container flex overflow-x-hidden pb-10">
       <Sidebar />
       <Dashboard />
+      <Novu />
     </div>
   </LayoutMain>
 );
