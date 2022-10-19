@@ -1,4 +1,4 @@
-import { NovuProvider, NotificationCenter } from '@novu/notification-center';
+import { NotificationCenter } from '@novu/notification-center';
 import dynamic from 'next/dynamic';
 import React, { useCallback } from 'react';
 
@@ -39,24 +39,18 @@ const footer = () => (
 );
 
 const Novu = () => {
-  const currentUserUuid = localStorage.getItem('widget_user_uuid');
   const onNotificationClick = useCallback((notification) => {
     window.location.href = notification.cta.data.url;
   }, []);
 
   return (
-    <NovuProvider
-      subscriberId={currentUserUuid || process.env.NEXT_PUBLIC_NOVU_SUBSCRIBER_ID}
-      applicationIdentifier={process.env.NEXT_PUBLIC_NOVU_APP_ID}
-    >
-      <NotificationCenter
-        offset={20}
-        colorScheme="dark"
-        theme={theme}
-        footer={footer}
-        onNotificationClick={onNotificationClick}
-      />
-    </NovuProvider>
+    <NotificationCenter
+      offset={20}
+      colorScheme="dark"
+      theme={theme}
+      footer={footer}
+      onNotificationClick={onNotificationClick}
+    />
   );
 };
 

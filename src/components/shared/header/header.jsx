@@ -1,3 +1,4 @@
+import { useNotifications } from '@novu/notification-center';
 import React, { useCallback } from 'react';
 
 import Button from 'components/shared/button';
@@ -9,6 +10,8 @@ import MagnifierIcon from 'icons/magnifier.inline.svg';
 import NavigationIllustration from 'icons/nav-illustration.inline.svg';
 
 const Header = () => {
+  const { notifications } = useNotifications();
+  const unseenCount = notifications.filter((message) => !message.seen).length;
   const sendMessage = useCallback(async () => {
     await fetch('/api/send-message', {
       method: 'POST',
@@ -38,10 +41,12 @@ const Header = () => {
             onClick={sendMessage}
           >
             <BellIcon className="w-6" aria-label="Notifications bell icon" />
-            <span
-              className="absolute top-2 right-2 z-10 block h-3 w-3 rounded-full border border-white bg-purple"
-              aria-label="Icon number of unread notifications"
-            />
+            {unseenCount ? (
+              <span
+                className="absolute top-2 right-2 z-10 block h-3 w-3 rounded-full border border-white bg-purple"
+                aria-label="Icon number of unread notifications"
+              />
+            ) : null}
           </div>
         </div>
       </div>
