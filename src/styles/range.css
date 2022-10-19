@@ -11,6 +11,10 @@ https://toughengineer.github.io/demo/slider-styler*/
   }
 
   /*webkit*/
+  input[type='range'].styled-slider::-webkit-slider-container {
+    background-color: black;
+  }
+
   input[type='range'].styled-slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     width: 22px;
@@ -25,7 +29,7 @@ https://toughengineer.github.io/demo/slider-styler*/
   input[type='range'].styled-slider::-webkit-slider-runnable-track {
     height: 6px;
     border: none;
-    border-radius: 0;
+    border-radius: 10px;
     background: #1a1a1a;
     box-shadow: none;
   }
@@ -59,7 +63,7 @@ https://toughengineer.github.io/demo/slider-styler*/
   input[type='range'].styled-slider::-moz-range-track {
     height: 6px;
     border: none;
-    border-radius: 0;
+    border-radius: 10px;
     background: #1a1a1a;
     box-shadow: none;
   }
@@ -104,7 +108,7 @@ https://toughengineer.github.io/demo/slider-styler*/
 
   input[type='range'].styled-slider::-ms-track {
     height: 6px;
-    border-radius: 0;
+    border-radius: 10px;
     background: #1a1a1a;
     border: none;
     box-shadow: none;

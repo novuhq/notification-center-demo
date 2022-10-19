@@ -25,7 +25,7 @@ const Dashboard = () => (
     </ul>
     <div className="relative">
       <CPUIllustration className="h-auto w-[830px] max-w-full" aria-hidden />
-      <label className="absolute bottom-[36%] -right-28 block w-52 rotate-90 sm:bottom-1/2 sm:-right-24">
+      <label className="absolute bottom-[36%] -right-[103px] block w-52 rotate-90 sm:bottom-1/2 sm:-right-24">
         <input className="styled-slider w-full" type="range" value={27} readOnly />
       </label>
     </div>

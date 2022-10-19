@@ -30,7 +30,7 @@ const theme = {
 };
 
 const footer = () => (
-  <footer className="row-start-3 py-3 text-center text-xs text-grey-5">
+  <footer className="row-start-3 py-3 text-center text-[13px] leading-none text-grey-5">
     Powered by{' '}
     <a className="text-white" href="https://novu.co/" target="_blank" rel="noreferrer">
       Novu
@@ -49,6 +49,7 @@ const Novu = () => {
       colorScheme="dark"
       theme={theme}
       footer={footer}
+      showUserPreferences={false}
       onNotificationClick={onNotificationClick}
     />
   );

@@ -1,21 +1,15 @@
 @layer components {
-  button[data-test-id='user-preference-cog'] {
-    @apply hidden;
-  }
-
   div[data-test-id='layout-wrapper'] {
-    @apply grid h-full grid-rows-[55px_1fr_auto];
+    @apply grid h-full grid-rows-[55px_1fr_auto] py-2;
   }
 
-  div[data-test-id='main-wrapper'],
-  div[data-test-id='notifications-scroll-area'],
-  .infinite-scroll-component__outerdiv {
-    @apply h-full;
+  div[data-test-id='layout-wrapper'] > div:nth-child(2) {
+    @apply !min-h-[600px];
   }
 }
 
 .infinite-scroll-component {
-  @apply !h-[70vh];
+  @apply !h-[600px];
 }
 
 .infinite-scroll-component > div {
