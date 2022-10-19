@@ -8,7 +8,7 @@ import LayoutMain from 'layouts/layout-main';
 const Home = () => (
   <LayoutMain>
     <h1 className="sr-only">Novu dashboard demo page</h1>
-    <div className="container flex overflow-x-hidden pb-10">
+    <div className="container main-wrapper overflow-x-hidden pb-10">
       <Sidebar />
       <Dashboard />
       <Novu />

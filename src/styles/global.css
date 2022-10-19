@@ -10,7 +10,7 @@
   }
 
   body {
-    @apply min-w-[320px] font-sans antialiased;
+    @apply min-w-[768px] font-sans antialiased;
     -webkit-tap-highlight-color: transparent;
   }
 }

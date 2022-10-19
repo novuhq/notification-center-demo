@@ -8,25 +8,25 @@ import PercentageIllustration from './images/percentage-illustration.inline.svg'
 import PieChartIllustration from './images/pie-chart-illustration.inline.svg';
 
 const Dashboard = () => (
-  <div className="safe-paddings space-y-10 px-10 pt-2 sm:space-y-5 sm:p-0">
+  <div className="safe-paddings space-y-10 pt-2 sm:space-y-5 sm:p-0">
     <ul className="flex space-x-10 sm:space-x-5">
       <li>
-        <h2 className="text-xl font-medium text-white">
+        <h2 className="text-[18px] font-medium leading-snug text-white">
           CPU <span className="text-grey-6">65%</span>
         </h2>
-        <Percentage65Illustration className="h-auto w-[400px] max-w-full" aria-hidden />
+        <Percentage65Illustration className="mt-2 h-auto w-[400px] xl:max-w-full" aria-hidden />
       </li>
       <li>
-        <h2 className="text-xl font-medium text-white">
+        <h2 className="text-[18px] font-medium leading-snug text-white">
           RAM <span className="text-grey-6">79%</span>
         </h2>
-        <Percentage79Illustration className="h-auto w-[400px] max-w-full" aria-hidden />
+        <Percentage79Illustration className="mt-2 h-auto w-[400px] xl:max-w-full" aria-hidden />
       </li>
     </ul>
     <div className="relative">
       <CPUIllustration className="h-auto w-[830px] max-w-full" aria-hidden />
-      <label className="absolute bottom-[52.555%] -right-28 rotate-90 sm:bottom-1/2 sm:-right-24">
-        <input className="styled-slider" type="range" />
+      <label className="absolute bottom-[36%] -right-28 block w-52 rotate-90 sm:bottom-1/2 sm:-right-24">
+        <input className="styled-slider w-full" type="range" value={27} readOnly />
       </label>
     </div>
     <div className="flex space-x-10 sm:space-x-5">
