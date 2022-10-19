@@ -12,6 +12,7 @@ const Header = () => {
   const sendMessage = useCallback(async () => {
     await fetch('/api/send-message', {
       method: 'POST',
+      body: JSON.stringify({ uuid: localStorage.getItem('widget_user_uuid') }),
     });
   }, []);
 
@@ -34,9 +35,7 @@ const Header = () => {
           </Button>
           <div
             className="relative flex h-[46px] w-[46px] items-center justify-center rounded-full border border-grey-4 bg-white sm:h-[38px] sm:w-[38px]"
-            onClick={() => {
-              sendMessage();
-            }}
+            onClick={sendMessage}
           >
             <BellIcon className="w-6" aria-label="Notifications bell icon" />
             <span

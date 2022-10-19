@@ -1,7 +1,15 @@
-import sendNotification from 'helpers/send-notification';
+import { Novu } from '@novu/node';
+
+const novu = new Novu('11a8c44ffd4f1ef1a88cc688abd6e770'); // process.env.NOVU_API_KEY
 
 export default async function handler(req, res) {
-  await sendNotification('test', '55403046-fee9-43a6-9489-2bee5fee2e81', {});
+  const { uuid } = JSON.parse(req.body);
+
+  novu.trigger('test', {
+    to: {
+      subscriberId: uuid,
+    },
+  });
 
   return res.json({ finish: true });
 }
