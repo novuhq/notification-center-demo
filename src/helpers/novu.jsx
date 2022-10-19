@@ -29,9 +29,9 @@ const theme = {
   },
 };
 
-const NotificationCenterFooter = () => (
+const footer = () => (
   <footer className="text-center text-xs text-grey-5">
-    Powerd by{' '}
+    Powered by{' '}
     <a className="text-white" href="https://novu.co/" target="_blank" rel="noreferrer">
       Novu
     </a>
@@ -39,20 +39,21 @@ const NotificationCenterFooter = () => (
 );
 
 const Novu = () => {
+  const currentUserUuid = localStorage.getItem('widget_user_uuid');
   const onNotificationClick = useCallback((notification) => {
     window.location.href = notification.cta.data.url;
   }, []);
 
   return (
     <NovuProvider
-      subscriberId={process.env.NEXT_PUBLIC_NOVU_SUBSCRIBER_ID}
+      subscriberId={currentUserUuid || process.env.NEXT_PUBLIC_NOVU_SUBSCRIBER_ID}
       applicationIdentifier={process.env.NEXT_PUBLIC_NOVU_APP_ID}
     >
       <NotificationCenter
         offset={20}
-        theme={theme}
         colorScheme="dark"
-        footer={NotificationCenterFooter}
+        theme={theme}
+        footer={footer}
         onNotificationClick={onNotificationClick}
       />
     </NovuProvider>
