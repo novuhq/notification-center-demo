@@ -44,14 +44,16 @@ const Notifications = () => {
   }, []);
 
   return (
-    <NotificationCenter
-      offset={20}
-      colorScheme="dark"
-      theme={theme}
-      footer={footer}
-      showUserPreferences={false}
-      onNotificationClick={onNotificationClick}
-    />
+    <div className="notification-center-wrapper">
+      <NotificationCenter
+        offset={20}
+        colorScheme="dark"
+        theme={theme}
+        footer={footer}
+        showUserPreferences={false}
+        onNotificationClick={onNotificationClick}
+      />
+    </div>
   );
 };
 

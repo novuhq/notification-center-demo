@@ -1,15 +1,15 @@
 @layer components {
-  div[data-test-id='layout-wrapper'] {
-    @apply grid h-full grid-rows-[55px_1fr_auto] py-2;
+  .notification-center-wrapper > div {
+    @apply h-full !w-full;
   }
 
-  div[data-test-id='layout-wrapper'] > div:nth-child(2) {
-    @apply !min-h-[600px];
+  div[data-test-id='layout-wrapper'] {
+    @apply grid h-full grid-rows-[55px_1fr_auto] py-2;
   }
 }
 
 .infinite-scroll-component {
-  @apply !h-[600px];
+  @apply !h-[600px] xl:!h-[530px];
 }
 
 .infinite-scroll-component > div {

@@ -82,7 +82,7 @@ const Dashboard = () => {
   }, [currentAnimationFrameValue, rangeValue, sendMessage]);
 
   return (
-    <div className="safe-paddings space-y-10 pt-2 sm:space-y-5 sm:p-0">
+    <div className="safe-paddings flex flex-col justify-between space-y-10">
       <ul className="flex space-x-10 sm:space-x-5">
         <li>
           <LoadingBar id="cpu" name="CPU" maxValue={currentAnimationInPercent} />
@@ -94,7 +94,7 @@ const Dashboard = () => {
       <div className="relative flex">
         <div className="relative">
           <ImagePlaceholder width={820} height={260} />
-          <div className="absolute inset-0" ref={animationRef} />
+          <div className="absolute inset-0 xl:h-auto xl:max-w-[97%]" ref={animationRef} />
 
           <div className="absolute bottom-0 left-0 h-full max-h-[186px] w-full" aria-hidden>
             <div
@@ -108,7 +108,7 @@ const Dashboard = () => {
 
         <div className="absolute bottom-0 right-0 block">
           <InputRange
-            className="absolute bottom-0 -right-[98px] block w-52 -translate-y-[100px] -rotate-90 sm:bottom-1/2 sm:-right-24"
+            className="absolute bottom-0 -right-[98px] block w-52 -translate-y-[100px] -rotate-90 lg:w-40 sm:bottom-1/2 sm:-right-24"
             type="range"
             min="100"
             max="300"
@@ -117,11 +117,11 @@ const Dashboard = () => {
           />
         </div>
       </div>
-      <div className="flex space-x-10 sm:space-x-5">
+      <div className="flex space-x-10 lg:space-x-8">
         <div>
           <PieChartIllustration className="h-auto w-[400px] max-w-full" aria-hidden />
         </div>
-        <div className="space-y-10 sm:space-y-5">
+        <div className="space-y-10 lg:space-y-6">
           <NodesIllustration className="h-auto w-[400px] max-w-full" aria-hidden />
           <PercentageIllustration className="h-auto w-[400px] max-w-full" aria-hidden />
         </div>
