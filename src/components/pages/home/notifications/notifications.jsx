@@ -38,7 +38,7 @@ const footer = () => (
   </footer>
 );
 
-const Novu = () => {
+const Notifications = () => {
   const onNotificationClick = useCallback((notification) => {
     window.location.href = notification.cta.data.url;
   }, []);
@@ -55,6 +55,6 @@ const Novu = () => {
   );
 };
 
-export default dynamic(() => Promise.resolve(Novu), {
+export default dynamic(() => Promise.resolve(Notifications), {
   ssr: false,
 });

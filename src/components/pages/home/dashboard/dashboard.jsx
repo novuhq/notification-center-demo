@@ -1,9 +1,11 @@
 import { transform } from 'framer-motion';
 import React, { useState, useEffect, useCallback } from 'react';
 
+import ImagePlaceholder from 'components/shared/image-placeholder';
 import InputRange from 'components/shared/input-range';
 import LoadingBar from 'components/shared/loading-bar';
 import useLottie from 'hooks/use-lottie';
+import useUserUuid from 'hooks/use-user-uuid';
 
 import graphAnimationData from './data/graph.json';
 import NodesIllustration from './images/nodes-illustration.inline.svg';
@@ -18,6 +20,8 @@ import PieChartIllustration from './images/pie-chart-illustration.inline.svg';
 // const LOADING_RANGE = createRangeArray(20, 80);
 
 const Dashboard = () => {
+  const userUuid = useUserUuid();
+
   const [rangeValue, setRangeValue] = useState(220);
   const [tickCount, setTickCount] = useState(0);
   const [currentAnimationFrameValue, setCurrentAnimationFrameValue] = useState(0);
@@ -47,9 +51,9 @@ const Dashboard = () => {
   const sendMessage = useCallback(async () => {
     await fetch('/api/send-message', {
       method: 'POST',
-      body: JSON.stringify({ uuid: localStorage.getItem('widget_user_uuid') }),
+      body: JSON.stringify({ uuid: userUuid }),
     });
-  }, []);
+  }, [userUuid]);
 
   useEffect(() => {
     const interval = setInterval(() => setTickCount((prevState) => prevState + 1), 1000);
@@ -89,12 +93,7 @@ const Dashboard = () => {
       </ul>
       <div className="relative flex">
         <div className="relative">
-          <img
-            className="relative"
-            src={`data:image/svg+xml;charset=utf-8,%3Csvg width='820' height='260' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E`}
-            alt=""
-            aria-hidden
-          />
+          <ImagePlaceholder width={820} height={260} />
           <div className="absolute inset-0" ref={animationRef} />
 
           <div className="absolute bottom-0 left-0 h-full max-h-[186px] w-full" aria-hidden>

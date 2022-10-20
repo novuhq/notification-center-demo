@@ -6,11 +6,11 @@
 @import './fonts.css';
 @import './global.css';
 @import './grid-gap.css';
-@import './novu.css';
 
 /* Components */
 @import './container.css';
 @import '../components/shared/input-range/input-range.css';
+@import '../components/pages/home/notifications/notifications.css';
 
 /* Utilities */
 @import './remove-autocomplete-styles.css';

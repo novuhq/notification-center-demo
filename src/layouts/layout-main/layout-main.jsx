@@ -1,26 +1,13 @@
 import { NovuProvider } from '@novu/notification-center';
 import PropTypes from 'prop-types';
-import React, { useEffect, useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
+import React from 'react';
 
 import Header from 'components/shared/header';
 import SEO from 'components/shared/seo';
+import useUserUuid from 'hooks/use-user-uuid';
 
 const LayoutMain = ({ children }) => {
-  const [userUuid, setUserUuid] = useState('');
-
-  useEffect(() => {
-    let currentUserUuid = localStorage.getItem('widget_user_uuid');
-
-    if (currentUserUuid) {
-      return setUserUuid(currentUserUuid);
-    }
-
-    currentUserUuid = uuidv4();
-    localStorage.removeItem('widget_user_uuid');
-    localStorage.setItem('widget_user_uuid', currentUserUuid);
-    setUserUuid(currentUserUuid);
-  }, []);
+  const userUuid = useUserUuid();
 
   return (
     <NovuProvider
@@ -28,8 +15,10 @@ const LayoutMain = ({ children }) => {
       applicationIdentifier={process.env.NEXT_PUBLIC_NOVU_APP_ID}
     >
       <SEO />
-      <Header />
-      <main>{children}</main>
+      <div className="relative flex min-h-screen flex-col">
+        <Header />
+        <main className="flex-grow">{children}</main>
+      </div>
     </NovuProvider>
   );
 };

@@ -2,12 +2,4 @@
   .container {
     @apply mx-auto max-w-[1440px] px-10 sm:px-5;
   }
-
-  .main-wrapper {
-    @apply grid grid-cols-[65px_minmax(200px,1fr)_375px] gap-x-[40px] md:grid-cols-[1fr_300px];
-  }
-
-  .main-wrapper > div:last-of-type {
-    max-width: 100%;
-  }
 }
