@@ -7,7 +7,7 @@ import Header from 'components/shared/header';
 import SEO from 'components/shared/seo';
 
 const LayoutMain = ({ children }) => {
-  const [userUuid, setUserUuid] = useState(null); // process.env.NEXT_PUBLIC_NOVU_SUBSCRIBER_ID
+  const [userUuid, setUserUuid] = useState('');
 
   useEffect(() => {
     let currentUserUuid = localStorage.getItem('widget_user_uuid');
@@ -23,10 +23,7 @@ const LayoutMain = ({ children }) => {
   }, []);
 
   return (
-    <NovuProvider
-      subscriberId={userUuid}
-      applicationIdentifier={process.env.NEXT_PUBLIC_NOVU_APP_ID}
-    >
+    <NovuProvider subscriberId={userUuid} applicationIdentifier={process.env.NOVU_APP_ID}>
       <SEO />
       <Header />
       <main>{children}</main>

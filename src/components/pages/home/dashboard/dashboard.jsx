@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Percentage65Illustration from './images/65-percentage-illustration.inline.svg';
-import Percentage79Illustration from './images/79-percentage-illustration.inline.svg';
+import LoadingBar from 'components/shared/loading-bar';
+
 import CPUIllustration from './images/cpu-illustration.inline.svg';
 import NodesIllustration from './images/nodes-illustration.inline.svg';
 import PercentageIllustration from './images/percentage-illustration.inline.svg';
@@ -11,21 +11,15 @@ const Dashboard = () => (
   <div className="safe-paddings space-y-10 pt-2 sm:space-y-5 sm:p-0">
     <ul className="flex space-x-10 sm:space-x-5">
       <li>
-        <h2 className="text-[18px] font-medium leading-snug text-white">
-          CPU <span className="text-grey-6">65%</span>
-        </h2>
-        <Percentage65Illustration className="mt-2 h-auto w-[400px] xl:max-w-full" aria-hidden />
+        <LoadingBar id="cpu" name="CPU" maxValue={64} />
       </li>
       <li>
-        <h2 className="text-[18px] font-medium leading-snug text-white">
-          RAM <span className="text-grey-6">79%</span>
-        </h2>
-        <Percentage79Illustration className="mt-2 h-auto w-[400px] xl:max-w-full" aria-hidden />
+        <LoadingBar id="ram" name="RAM" maxValue={79} />
       </li>
     </ul>
     <div className="relative">
-      <CPUIllustration className="h-auto w-[830px] max-w-full" aria-hidden />
-      <label className="absolute bottom-[36%] -right-[103px] block w-52 rotate-90 sm:bottom-1/2 sm:-right-24">
+      <CPUIllustration className="h-auto w-[830px] xl:max-w-[98%]" aria-hidden />
+      <label className="absolute bottom-0 -right-[103px] block w-52 -translate-y-[95px] rotate-90 sm:bottom-1/2 sm:-right-24">
         <input className="styled-slider w-full" type="range" value={27} readOnly />
       </label>
     </div>
