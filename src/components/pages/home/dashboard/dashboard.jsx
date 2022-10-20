@@ -1,6 +1,7 @@
-import clsx from 'clsx';
+import { transform } from 'framer-motion';
 import React, { useState, useEffect, useCallback } from 'react';
 
+import InputRange from 'components/shared/input-range';
 import LoadingBar from 'components/shared/loading-bar';
 import useLottie from 'hooks/use-lottie';
 
@@ -17,10 +18,12 @@ import PieChartIllustration from './images/pie-chart-illustration.inline.svg';
 // const LOADING_RANGE = createRangeArray(20, 80);
 
 const Dashboard = () => {
-  const [rangeValue, setRangeValue] = useState(300);
+  const [rangeValue, setRangeValue] = useState(220);
   const [tickCount, setTickCount] = useState(0);
   const [currentAnimationFrameValue, setCurrentAnimationFrameValue] = useState(0);
   const [currentAnimationInPercent, setCurrentAnimationInPercent] = useState(0);
+
+  const getPercentageRange = transform([100, 300], [0, 100]);
 
   // const isLoadingBarUpdate = useMemo(
   //   () => LOADING_RANGE.includes(currentAnimationInPercent),
@@ -28,7 +31,12 @@ const Dashboard = () => {
   // );
 
   const { animationRef, animation } = useLottie({
-    lottieOptions: { animationData: graphAnimationData, autoplay: true, loop: true },
+    lottieOptions: {
+      renderer: 'canvas',
+      animationData: graphAnimationData,
+      autoplay: true,
+      loop: true,
+    },
     isInView: true,
   });
 
@@ -79,18 +87,36 @@ const Dashboard = () => {
           <LoadingBar id="ram" name="RAM" maxValue={currentAnimationInPercent} />
         </li>
       </ul>
-      <div className="relative">
-        <div className={clsx('w-[830px] xl:max-w-[98%]')} ref={animationRef} />
-        <label className="absolute bottom-0 -right-[98px] block w-52 -translate-y-[95px] -rotate-90 sm:bottom-1/2 sm:-right-24">
-          <input
-            className="styled-slider w-full"
+      <div className="relative flex">
+        <div className="relative">
+          <img
+            className="relative"
+            src={`data:image/svg+xml;charset=utf-8,%3Csvg width='820' height='260' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E`}
+            alt=""
+            aria-hidden
+          />
+          <div className="absolute inset-0" ref={animationRef} />
+
+          <div className="absolute bottom-0 left-0 h-full max-h-[186px] w-full" aria-hidden>
+            <div
+              className="absolute bottom-0 left-0 h-px w-full border-t border-dashed border-green"
+              style={{
+                bottom: `calc(${getPercentageRange(rangeValue)}% + 10px)`,
+              }}
+            />
+          </div>
+        </div>
+
+        <div className="absolute bottom-0 right-0 block">
+          <InputRange
+            className="absolute bottom-0 -right-[98px] block w-52 -translate-y-[100px] -rotate-90 sm:bottom-1/2 sm:-right-24"
             type="range"
             min="100"
             max="300"
             value={rangeValue}
             onChange={handleRangeChange}
           />
-        </label>
+        </div>
       </div>
       <div className="flex space-x-10 sm:space-x-5">
         <div>

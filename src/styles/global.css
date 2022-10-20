@@ -2,7 +2,7 @@
 @layer base {
   html,
   body {
-    @apply bg-grey-2;
+    @apply bg-gray-2;
   }
 
   #__next {

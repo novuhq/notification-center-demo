@@ -16,15 +16,12 @@ module.exports = {
       inherit: colors.inherit,
       current: colors.current,
       transparent: colors.transparent,
-      // TODO: Add colors
-      // Make sure that they are prepared in the Figma and follow the naming primary/secondary/gray-${number}
-      // Example of correctly prepared colors in Figma — https://user-images.githubusercontent.com/20713191/143586876-5e834233-9639-4166-9811-b00e63820d98.png
-      // Example of incorrectly prepared colors in Figma — https://user-images.githubusercontent.com/20713191/143586974-6986149f-aee3-450c-a1dd-26e73e3aca02.png
       black: '#000000',
       'opacity-black': 'rgba(0, 0, 0, 0.3)',
       white: '#FFFFFF',
+      green: '#00E599',
       purple: '#E300BD',
-      grey: {
+      gray: {
         1: '#0D0D0D',
         2: '#1A1A1A',
         3: '#262626',

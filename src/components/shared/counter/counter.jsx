@@ -19,7 +19,7 @@ const Counter = ({ from, to }) => {
     return () => controls.stop();
   }, [from, to]);
 
-  return <span className="text-grey-6" ref={nodeRef} />;
+  return <span className="text-gray-6" ref={nodeRef} />;
 };
 
 Counter.propTypes = {

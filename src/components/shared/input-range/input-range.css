@@ -1,0 +1,17 @@
+@layer components {
+  .input-range {
+    &::-webkit-slider-thumb {
+      @apply relative z-20 mt-[-7px] h-[22px] w-[22px] cursor-pointer appearance-none rounded-full bg-green;
+      box-shadow: 0 0 15px 3px rgba(0, 229, 153, 0.4);
+    }
+
+    &::-moz-range-thumb {
+      @apply relative z-20 mt-[-7px] h-[22px] w-[22px] cursor-pointer appearance-none rounded-full bg-green;
+      box-shadow: 0 0 15px 3px rgba(0, 229, 153, 0.4);
+    }
+
+    &::-webkit-slider-runnable-track {
+      @apply h-2 rounded-full bg-transparent shadow-none;
+    }
+  }
+}

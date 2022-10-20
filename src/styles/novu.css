@@ -13,5 +13,5 @@
 }
 
 .infinite-scroll-component > div {
-  @apply border border-solid border-grey-3;
+  @apply border border-solid border-gray-3;
 }
