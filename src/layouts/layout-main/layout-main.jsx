@@ -23,7 +23,10 @@ const LayoutMain = ({ children }) => {
   }, []);
 
   return (
-    <NovuProvider subscriberId={userUuid} applicationIdentifier={process.env.NOVU_APP_ID}>
+    <NovuProvider
+      subscriberId={userUuid}
+      applicationIdentifier={process.env.NEXT_PUBLIC_NOVU_APP_ID}
+    >
       <SEO />
       <Header />
       <main>{children}</main>

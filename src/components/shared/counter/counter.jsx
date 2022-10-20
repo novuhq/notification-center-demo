@@ -9,7 +9,8 @@ const Counter = ({ from, to }) => {
     const node = nodeRef.current;
 
     const controls = animate(from, to, {
-      duration: 1,
+      duration: 0,
+      delay: 0.5,
       onUpdate(value) {
         node.textContent = value.toFixed(0);
       },

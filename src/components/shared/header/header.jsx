@@ -1,5 +1,5 @@
 import { useNotifications } from '@novu/notification-center';
-import React, { useCallback } from 'react';
+import React from 'react';
 
 import Button from 'components/shared/button';
 import Link from 'components/shared/link';
@@ -12,12 +12,6 @@ import NavigationIllustration from 'icons/nav-illustration.inline.svg';
 const Header = () => {
   const { notifications } = useNotifications();
   const unseenCount = notifications.filter((message) => !message.seen).length;
-  const sendMessage = useCallback(async () => {
-    await fetch('/api/send-message', {
-      method: 'POST',
-      body: JSON.stringify({ uuid: localStorage.getItem('widget_user_uuid') }),
-    });
-  }, []);
 
   return (
     <header className="safe-paddings">
@@ -36,10 +30,7 @@ const Header = () => {
             <span className="sr-only">Light theme icon</span>
             <LightThemeIcon className="w-5" aria-hidden />
           </Button>
-          <div
-            className="relative flex h-[46px] w-[46px] items-center justify-center rounded-full border border-grey-4 bg-white sm:h-[38px] sm:w-[38px]"
-            onClick={sendMessage}
-          >
+          <div className="relative flex h-[46px] w-[46px] items-center justify-center rounded-full border border-grey-4 bg-white sm:h-[38px] sm:w-[38px]">
             <BellIcon className="w-6" aria-label="Notifications bell icon" />
             {unseenCount ? (
               <span
