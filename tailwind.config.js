@@ -36,7 +36,7 @@ module.exports = {
     }),
     screens: {
       '2xl': { max: '1919px' },
-      xl: { max: '1440px' },
+      xl: { max: '1380px' },
       lg: { max: '1279px' },
       md: { max: '1023px' },
       sm: { max: '767px' },

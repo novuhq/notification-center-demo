@@ -10,7 +10,7 @@ const InputRange = ({ className, ...otherProps }) => (
     )}
   >
     <input
-      className="input-range relative flex w-full appearance-none items-center bg-transparent focus:outline-none"
+      className="input-range relative flex h-full w-full appearance-none items-center bg-transparent focus:outline-none"
       type="range"
       {...otherProps}
     />

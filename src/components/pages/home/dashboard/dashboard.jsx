@@ -82,7 +82,7 @@ const Dashboard = () => {
   }, [currentAnimationFrameValue, rangeValue, sendMessage]);
 
   return (
-    <div className="safe-paddings flex flex-col justify-between space-y-10 overflow-x-hidden pr-2.5 xl:space-y-5 sm:justify-start">
+    <div className="safe-paddings flex flex-col justify-between space-y-10 xl:space-y-5 xl:overflow-x-hidden xl:pr-2.5 sm:justify-start">
       <ul className="flex space-x-10 xl:space-x-5 sm:flex-wrap sm:space-x-0 sm:space-y-5">
         <li>
           <LoadingBar id="cpu" name="CPU" maxValue={currentAnimationInPercent} />
@@ -95,13 +95,13 @@ const Dashboard = () => {
         <div className="relative">
           <ImagePlaceholder width={820} height={260} />
           <div
-            className="absolute inset-0 -z-20 pr-3 lg:left-auto lg:h-[250px] lg:w-[810px]"
+            className="absolute inset-0 -z-20 xl:pr-4 lg:left-auto lg:h-[250px] lg:w-[810px]"
             ref={animationRef}
           />
 
           <div className="absolute bottom-0 left-0 h-full max-h-[186px] w-full" aria-hidden>
             <div
-              className="absolute bottom-0 left-0 h-px w-full border-t border-dashed border-green"
+              className="absolute bottom-0 left-[1px] h-px w-full border-t border-dashed border-green"
               style={{
                 bottom: `calc(${getPercentageRange(rangeValue)}% - 8px)`,
               }}
@@ -111,7 +111,7 @@ const Dashboard = () => {
 
         <div className="absolute bottom-0 right-0 block">
           <InputRange
-            className="absolute bottom-0 -right-[94px] block w-[192px] -translate-y-[85px] -rotate-90"
+            className="absolute bottom-0 -right-[94px] block h-[20px] w-[192px] -translate-y-[85px] -rotate-90"
             type="range"
             min="100"
             max="300"
