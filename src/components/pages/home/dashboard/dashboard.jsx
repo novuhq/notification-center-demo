@@ -104,7 +104,7 @@ const Dashboard = () => {
           </div>
           <div className="absolute bottom-0 left-0 h-full max-h-[186px] w-full" aria-hidden>
             <div
-              className="absolute bottom-0 left-[3px] h-px w-full border-t border-dashed border-green after:absolute after:right-0 after:top-1/2 after:h-10 after:w-10 after:-translate-y-1/2 after:translate-x-[95%] after:rounded-full after:bg-green after:blur-lg xl:after:translate-x-1/2"
+              className="absolute bottom-0 left-[3px] h-px w-full border-t border-dashed border-green after:pointer-events-none after:absolute after:right-0 after:top-1/2 after:z-20 after:h-10 after:w-10 after:-translate-y-1/2 after:translate-x-[95%] after:rounded-full after:bg-green after:blur-lg xl:after:translate-x-[45%]"
               style={{
                 bottom: `calc(${getPercentageRange(rangeValue)}% + 9px)`,
               }}
