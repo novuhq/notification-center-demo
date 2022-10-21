@@ -9,7 +9,7 @@ const Home = () => (
   <LayoutMain>
     <h1 className="sr-only">Novu dashboard demo page</h1>
     <div className="container main-wrapper pb-10">
-      <div className="grid grid-cols-[65px_1fr_375px] gap-x-10 lg:grid-cols-[65px_1fr_300px] lg:gap-x-6 md:grid-cols-[1fr_300px]">
+      <div className="grid grid-cols-[65px_1fr_375px] gap-x-10 xl:gap-x-5 lg:grid-cols-[65px_1fr_300px] md:grid-cols-[1fr_300px] sm:grid-cols-[1fr_1fr] sm:gap-x-2.5">
         <Sidebar />
         <Dashboard />
         <Notifications />
