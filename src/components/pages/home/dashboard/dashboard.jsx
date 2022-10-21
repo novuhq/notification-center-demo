@@ -1,4 +1,4 @@
-import { transform } from 'framer-motion';
+import { motion, transform } from 'framer-motion';
 import React, { useState, useEffect, useCallback } from 'react';
 
 import ImagePlaceholder from 'components/shared/image-placeholder';
@@ -82,7 +82,7 @@ const Dashboard = () => {
   }, [currentAnimationFrameValue, rangeValue, sendMessage]);
 
   return (
-    <div className="safe-paddings flex flex-col justify-between space-y-10 xl:space-y-5 xl:overflow-x-hidden xl:pr-2.5 sm:justify-start">
+    <div className="safe-paddings flex flex-col justify-between space-y-10 xl:space-y-5 xl:pr-2.5 sm:justify-start">
       <ul className="flex space-x-10 xl:space-x-5 sm:flex-wrap sm:space-x-0 sm:space-y-5">
         <li>
           <LoadingBar id="cpu" name="CPU" maxValue={currentAnimationInPercent} />
@@ -101,17 +101,26 @@ const Dashboard = () => {
 
           <div className="absolute bottom-0 left-0 h-full max-h-[186px] w-full" aria-hidden>
             <div
-              className="absolute bottom-0 left-[1px] h-px w-full border-t border-dashed border-green"
+              className="absolute bottom-0 left-[3px] h-px w-full border-t border-dashed border-green after:absolute after:right-0 after:top-1/2 after:h-10 after:w-10 after:-translate-y-1/2 after:translate-x-[95%] after:rounded-full after:bg-green after:blur-lg"
               style={{
-                bottom: `calc(${getPercentageRange(rangeValue)}% - 8px)`,
+                bottom: `calc(${getPercentageRange(rangeValue)}% + 9px)`,
               }}
             />
+            <motion.div
+              className="absolute bottom-0 right-0 z-50 translate-x-28 rounded bg-green px-2 py-1 text-xs font-medium shadow-lg shadow-black before:absolute before:-left-2 before:-z-20 before:border-[7px_12.1px_7px_0]  before:border-solid before:border-[transparent_#00E599_transparent_transparent] xl:translate-x-24"
+              style={{
+                bottom: `calc(${getPercentageRange(rangeValue)}% - 3px)`,
+              }}
+              animate={{ opacity: 0, transition: { delay: 5, duration: 0.5 } }}
+            >
+              Adjust it!
+            </motion.div>
           </div>
         </div>
 
         <div className="absolute bottom-0 right-0 block">
           <InputRange
-            className="absolute bottom-0 -right-[94px] block h-[20px] w-[192px] -translate-y-[85px] -rotate-90"
+            className="absolute bottom-0 -right-[103px] block h-[20px] w-[208px] -translate-y-[93px] -rotate-90"
             type="range"
             min="100"
             max="300"
