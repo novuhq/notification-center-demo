@@ -22,7 +22,7 @@ import PieChartIllustration from './images/pie-chart-illustration.inline.svg';
 const Dashboard = () => {
   const userUuid = useUserUuid();
 
-  const [rangeValue, setRangeValue] = useState(220);
+  const [rangeValue, setRangeValue] = useState(300);
   const [tickCount, setTickCount] = useState(0);
   const [currentAnimationFrameValue, setCurrentAnimationFrameValue] = useState(0);
   const [currentAnimationInPercent, setCurrentAnimationInPercent] = useState(0);
@@ -82,8 +82,8 @@ const Dashboard = () => {
   }, [currentAnimationFrameValue, rangeValue, sendMessage]);
 
   return (
-    <div className="safe-paddings flex flex-col justify-between space-y-10">
-      <ul className="flex space-x-10 sm:space-x-5">
+    <div className="safe-paddings flex flex-col justify-between space-y-10 xl:space-y-5 xl:overflow-x-hidden xl:pr-2.5 sm:justify-start">
+      <ul className="flex space-x-10 xl:space-x-5 sm:flex-wrap sm:space-x-0 sm:space-y-5">
         <li>
           <LoadingBar id="cpu" name="CPU" maxValue={currentAnimationInPercent} />
         </li>
@@ -91,16 +91,19 @@ const Dashboard = () => {
           <LoadingBar id="ram" name="RAM" maxValue={currentAnimationInPercent} />
         </li>
       </ul>
-      <div className="relative flex">
+      <div className="relative flex lg:min-h-[250px]">
         <div className="relative">
           <ImagePlaceholder width={820} height={260} />
-          <div className="absolute inset-0 xl:h-auto xl:max-w-[97%]" ref={animationRef} />
+          <div
+            className="absolute inset-0 -z-20 xl:pr-4 lg:left-auto lg:h-[250px] lg:w-[810px]"
+            ref={animationRef}
+          />
 
           <div className="absolute bottom-0 left-0 h-full max-h-[186px] w-full" aria-hidden>
             <div
-              className="absolute bottom-0 left-0 h-px w-full border-t border-dashed border-green"
+              className="absolute bottom-0 left-[1px] h-px w-full border-t border-dashed border-green"
               style={{
-                bottom: `calc(${getPercentageRange(rangeValue)}% + 10px)`,
+                bottom: `calc(${getPercentageRange(rangeValue)}% - 8px)`,
               }}
             />
           </div>
@@ -108,7 +111,7 @@ const Dashboard = () => {
 
         <div className="absolute bottom-0 right-0 block">
           <InputRange
-            className="absolute bottom-0 -right-[98px] block w-52 -translate-y-[100px] -rotate-90 lg:w-40 sm:bottom-1/2 sm:-right-24"
+            className="absolute bottom-0 -right-[94px] block h-[20px] w-[192px] -translate-y-[85px] -rotate-90"
             type="range"
             min="100"
             max="300"
@@ -117,11 +120,11 @@ const Dashboard = () => {
           />
         </div>
       </div>
-      <div className="flex space-x-10 lg:space-x-8">
+      <div className="flex space-x-10 xl:space-x-5 md:space-x-0 xs:hidden">
         <div>
           <PieChartIllustration className="h-auto w-[400px] max-w-full" aria-hidden />
         </div>
-        <div className="space-y-10 lg:space-y-6">
+        <div className="flex flex-col justify-between space-y-10 md:hidden">
           <NodesIllustration className="h-auto w-[400px] max-w-full" aria-hidden />
           <PercentageIllustration className="h-auto w-[400px] max-w-full" aria-hidden />
         </div>
