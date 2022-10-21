@@ -1,5 +1,7 @@
 import { NotificationCenter } from '@novu/notification-center';
+import clsx from 'clsx';
 import dynamic from 'next/dynamic';
+import PropTypes from 'prop-types';
 import React, { useCallback } from 'react';
 
 const theme = {
@@ -38,13 +40,13 @@ const footer = () => (
   </footer>
 );
 
-const Notifications = () => {
+const Notifications = ({ className, ...otherProps }) => {
   const onNotificationClick = useCallback((notification) => {
     window.location.href = notification.cta.data.url;
   }, []);
 
   return (
-    <div className="notification-center-wrapper">
+    <div className={clsx('notification-center-wrapper', className)}>
       <NotificationCenter
         offset={20}
         colorScheme="dark"
@@ -52,9 +54,18 @@ const Notifications = () => {
         footer={footer}
         showUserPreferences={false}
         onNotificationClick={onNotificationClick}
+        {...otherProps}
       />
     </div>
   );
+};
+
+Notifications.propTypes = {
+  className: PropTypes.string,
+};
+
+Notifications.defaultProps = {
+  className: null,
 };
 
 export default dynamic(() => Promise.resolve(Notifications), {

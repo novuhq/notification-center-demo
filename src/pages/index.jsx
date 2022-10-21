@@ -8,11 +8,11 @@ import LayoutMain from 'layouts/layout-main';
 const Home = () => (
   <LayoutMain>
     <h1 className="sr-only">Novu dashboard demo page</h1>
-    <div className="container main-wrapper pb-10">
-      <div className="grid grid-cols-[65px_1fr_375px] gap-x-10 xl:gap-x-5 lg:grid-cols-[65px_1fr_300px] md:grid-cols-[1fr_300px] sm:grid-cols-[1fr_1fr] sm:gap-x-2.5">
+    <div className="container main-wrapper pb-10 lg:overflow-x-hidden">
+      <div className="relative grid grid-cols-[65px_1fr_375px] gap-x-10 xl:gap-x-5 lg:grid-cols-[65px_1fr_300px] md:grid-cols-[1fr]">
         <Sidebar />
         <Dashboard />
-        <Notifications />
+        <Notifications className="md:hidden" />
       </div>
     </div>
   </LayoutMain>
