@@ -22,15 +22,15 @@ const Header = () => {
         </Link>
         <NavigationIllustration className="mx-8 max-w-[510px] sm:hidden" />
         <div className="ml-auto flex items-center space-x-5 sm:space-x-3">
-          <Button className="cursor-default" theme="rounded" type="button">
+          <Button className="cursor-default border-gray-4" theme="rounded" type="button">
             <span className="sr-only">Search icon</span>
             <MagnifierIcon className="w-5" aria-hidden />
           </Button>
-          <Button className="cursor-default" theme="rounded" type="button">
+          <Button className="cursor-default border-gray-4" theme="rounded" type="button">
             <span className="sr-only">Light theme icon</span>
             <LightThemeIcon className="w-5" aria-hidden />
           </Button>
-          <div className="relative flex h-[46px] w-[46px] items-center justify-center rounded-full border border-grey-4 bg-white sm:h-[38px] sm:w-[38px]">
+          <div className="border-grey-4 relative flex h-[46px] w-[46px] items-center justify-center rounded-full border bg-white sm:h-[38px] sm:w-[38px]">
             <BellIcon className="w-6" aria-label="Notifications bell icon" />
             {unseenCount ? (
               <span
