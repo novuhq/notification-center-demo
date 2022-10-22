@@ -61,8 +61,8 @@ const Dashboard = () => {
   }, [currentAnimationFrameValue, rangeValue, sendMessage]);
 
   return (
-    <div className="safe-paddings flex flex-col justify-between space-y-10 xl:space-y-5 xl:pr-2.5 sm:justify-start">
-      <ul className="flex space-x-10 xl:space-x-5">
+    <div className="safe-paddings flex flex-col justify-between space-y-10 xl:space-y-5 sm:justify-start">
+      <ul className="flex space-x-10 xl:space-x-5 lg:justify-between">
         <li>
           <LoadingBar id="cpu" name="CPU" maxValue={cpuAnimationValues[tickCount]} />
         </li>
@@ -70,7 +70,7 @@ const Dashboard = () => {
           <LoadingBar id="ram" name="RAM" maxValue={ramAnimationValues[tickCount]} />
         </li>
       </ul>
-      <div className="relative flex lg:min-h-[250px] lg:max-w-[790px]">
+      <div className="relative flex lg:min-h-[250px] sm:min-h-[210px]">
         <Chart rangeValue={rangeValue} />
 
         <div className="absolute bottom-0 right-0 block">
@@ -84,15 +84,19 @@ const Dashboard = () => {
           />
         </div>
       </div>
-      <div className="flex space-x-10 xl:space-x-5 [@media(max-width:500px)]:space-x-0">
-        <div className="md:w-1/2 [@media(max-width:500px)]:hidden">
-          <PieChartIllustration className="h-auto w-[400px] max-w-full md:w-full" aria-hidden />
+      <div className="flex space-x-10 xl:space-x-5 sm:space-x-0" aria-hidden>
+        <div className="md:w-1/2 sm:hidden">
+          <PieChartIllustration className="h-auto w-[400px] max-w-full md:w-full" />
+          <div className="mt-5 hidden flex-col space-y-5 md:flex">
+            <NodesIllustration className="h-auto max-w-full" />
+            <PercentageIllustration className="h-auto max-w-full" />
+          </div>
         </div>
         <div className="flex flex-col justify-between space-y-10 md:hidden">
-          <NodesIllustration className="h-auto w-[400px] max-w-full" aria-hidden />
-          <PercentageIllustration className="h-auto w-[400px] max-w-full" aria-hidden />
+          <NodesIllustration className="h-auto w-[400px] max-w-full" />
+          <PercentageIllustration className="h-auto w-[400px] max-w-full" />
         </div>
-        <Notifications className="hidden w-1/2 md:block [@media(max-width:500px)]:w-full" />
+        <Notifications className="hidden w-1/2 md:block sm:w-full" />
       </div>
     </div>
   );
