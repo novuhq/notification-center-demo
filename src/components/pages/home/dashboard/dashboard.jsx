@@ -70,7 +70,7 @@ const Dashboard = () => {
           <LoadingBar id="ram" name="RAM" maxValue={ramAnimationValues[tickCount]} />
         </li>
       </ul>
-      <div className="relative flex lg:min-h-[250px] sm:min-h-[210px]">
+      <div className="relative flex lg:min-h-[250px] lg:max-w-[790px] sm:min-h-[210px]">
         <Chart rangeValue={rangeValue} />
 
         <div className="absolute bottom-0 right-0 block">
