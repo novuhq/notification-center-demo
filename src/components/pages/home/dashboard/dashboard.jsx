@@ -23,6 +23,14 @@ const pieChartAnimationValues = [
   20, 22, 27, 24, 30, 34, 40, 38, 42, 44, 46, 48, 50, 48, 46, 44, 42, 40, 38, 34, 36, 40, 42, 44,
   46, 48, 50, 48, 46, 44,
 ];
+const progressWithPercentageAnimationValues1 = [
+  10, 12, 17, 14, 20, 24, 30, 28, 32, 34, 36, 38, 40, 38, 36, 34, 32, 30, 28, 24, 26, 30, 32, 34,
+  36, 38, 40, 38, 36, 34,
+];
+const progressWithPercentageAnimationValues2 = [
+  20, 22, 27, 24, 30, 34, 40, 38, 42, 44, 46, 48, 50, 48, 46, 44, 42, 40, 38, 34, 36, 40, 42, 44,
+  46, 48, 50, 48, 46, 44,
+];
 
 const Dashboard = () => {
   const userUuid = useUserUuid();
@@ -92,12 +100,18 @@ const Dashboard = () => {
           <PieChart value={pieChartAnimationValues[tickCount]} />
           <div className="mt-5 hidden flex-col space-y-5 md:flex">
             <NodesIllustration className="h-auto max-w-full" />
-            <ProgressWithPercentage />
+            <ProgressWithPercentage
+              value1={progressWithPercentageAnimationValues1[tickCount]}
+              value2={progressWithPercentageAnimationValues2[tickCount]}
+            />
           </div>
         </div>
-        <div className="flex w-1/2 flex-col justify-between space-y-10 md:hidden">
+        <div className="flex w-1/2 flex-col justify-between space-y-10 lg:justify-start md:hidden">
           <NodesIllustration className="h-auto w-[400px] max-w-full" />
-          <ProgressWithPercentage />
+          <ProgressWithPercentage
+            value1={progressWithPercentageAnimationValues1[tickCount]}
+            value2={progressWithPercentageAnimationValues2[tickCount]}
+          />
         </div>
         <Notifications className="hidden w-1/2 md:block sm:w-full" />
       </div>
