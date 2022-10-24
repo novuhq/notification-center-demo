@@ -88,12 +88,12 @@ const Dashboard = () => {
           <PieChart />
           <div className="mt-5 hidden flex-col space-y-5 md:flex">
             <NodesIllustration className="h-auto max-w-full" />
-            <ProgressWithPercentage value1={25} value2={72} />
+            <ProgressWithPercentage />
           </div>
         </div>
         <div className="flex w-1/2 flex-col justify-between space-y-10 md:hidden">
           <NodesIllustration className="h-auto w-[400px] max-w-full" />
-          <ProgressWithPercentage value1={25} value2={72} />
+          <ProgressWithPercentage />
         </div>
         <Notifications className="hidden w-1/2 md:block sm:w-full" />
       </div>
