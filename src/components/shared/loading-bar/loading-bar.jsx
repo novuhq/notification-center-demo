@@ -9,7 +9,7 @@ const LoadingBar = ({ id, name, maxValue }) => (
     <h2 className="text-[18px] font-medium leading-snug text-white">
       {`${name} `}
       <span className="text-gray-6">
-        <Counter from={0} to={maxValue} />
+        <Counter to={maxValue} />
         <span>%</span>
       </span>
     </h2>

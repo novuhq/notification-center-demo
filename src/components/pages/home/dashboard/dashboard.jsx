@@ -8,8 +8,8 @@ import Notifications from '../notifications/notifications';
 
 import Chart from './chart';
 import NodesIllustration from './images/nodes-illustration.inline.svg';
-import PercentageIllustration from './images/percentage-illustration.inline.svg';
 import PieChart from './pie-chart';
+import ProgressWithPercentage from './progress-with-percentage';
 
 const cpuAnimationValues = [
   40, 42, 47, 44, 50, 54, 60, 58, 62, 64, 66, 68, 70, 68, 66, 64, 62, 60, 58, 54, 56, 60, 62, 64,
@@ -72,7 +72,6 @@ const Dashboard = () => {
       </ul>
       <div className="relative flex lg:min-h-[250px] lg:max-w-[790px] sm:min-h-[250px]">
         <Chart rangeValue={rangeValue} />
-
         <div className="absolute bottom-0 right-0 block">
           <InputRange
             className="absolute bottom-0 -right-[103px] block h-[20px] w-[208px] -translate-y-[93px] -rotate-90"
@@ -85,16 +84,16 @@ const Dashboard = () => {
         </div>
       </div>
       <div className="flex space-x-10 xl:space-x-5 sm:space-x-0" aria-hidden>
-        <div className="md:w-1/2 sm:hidden">
+        <div className="w-1/2 sm:hidden">
           <PieChart value={65} />
           <div className="mt-5 hidden flex-col space-y-5 md:flex">
             <NodesIllustration className="h-auto max-w-full" />
-            <PercentageIllustration className="h-auto max-w-full" />
+            <ProgressWithPercentage value1={25} value2={72} />
           </div>
         </div>
-        <div className="flex flex-col justify-between space-y-10 md:hidden">
+        <div className="flex w-1/2 flex-col justify-between space-y-10 md:hidden">
           <NodesIllustration className="h-auto w-[400px] max-w-full" />
-          <PercentageIllustration className="h-auto w-[400px] max-w-full" />
+          <ProgressWithPercentage value1={25} value2={72} />
         </div>
         <Notifications className="hidden w-1/2 md:block sm:w-full" />
       </div>

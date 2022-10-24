@@ -9,7 +9,7 @@ const Counter = ({ from, to }) => {
     const node = nodeRef.current;
 
     const controls = animate(from, to, {
-      duration: 0,
+      duration: from >= 0 ? 0.5 : 0,
       delay: 0.5,
       onUpdate(value) {
         node.textContent = value.toFixed(0);
@@ -19,12 +19,16 @@ const Counter = ({ from, to }) => {
     return () => controls.stop();
   }, [from, to]);
 
-  return <span ref={nodeRef} />;
+  return <span className="inline-block min-w-[1em] align-baseline" ref={nodeRef} />;
 };
 
 Counter.propTypes = {
-  from: PropTypes.number.isRequired,
+  from: PropTypes.number,
   to: PropTypes.number.isRequired,
+};
+
+Counter.defaultProps = {
+  from: -1,
 };
 
 export default Counter;
