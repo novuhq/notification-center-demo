@@ -9,7 +9,7 @@ import Notifications from '../notifications/notifications';
 import Chart from './chart';
 import NodesIllustration from './images/nodes-illustration.inline.svg';
 import PercentageIllustration from './images/percentage-illustration.inline.svg';
-import PieChartIllustration from './images/pie-chart-illustration.inline.svg';
+import PieChart from './pie-chart';
 
 const cpuAnimationValues = [
   40, 42, 47, 44, 50, 54, 60, 58, 62, 64, 66, 68, 70, 68, 66, 64, 62, 60, 58, 54, 56, 60, 62, 64,
@@ -28,7 +28,7 @@ const Dashboard = () => {
   const [currentAnimationFrameValue, setCurrentAnimationFrameValue] = useState(0);
 
   const handleRangeChange = useCallback((e) => {
-    setRangeValue(e.target.value);
+    setRangeValue(Number(e.target.value));
   }, []);
 
   const sendMessage = useCallback(async () => {
@@ -70,7 +70,7 @@ const Dashboard = () => {
           <LoadingBar id="ram" name="RAM" maxValue={ramAnimationValues[tickCount]} />
         </li>
       </ul>
-      <div className="relative flex lg:min-h-[250px] lg:max-w-[790px] sm:min-h-[210px]">
+      <div className="relative flex lg:min-h-[250px] lg:max-w-[790px] sm:min-h-[250px]">
         <Chart rangeValue={rangeValue} />
 
         <div className="absolute bottom-0 right-0 block">
@@ -86,7 +86,7 @@ const Dashboard = () => {
       </div>
       <div className="flex space-x-10 xl:space-x-5 sm:space-x-0" aria-hidden>
         <div className="md:w-1/2 sm:hidden">
-          <PieChartIllustration className="h-auto w-[400px] max-w-full md:w-full" />
+          <PieChart value={65} />
           <div className="mt-5 hidden flex-col space-y-5 md:flex">
             <NodesIllustration className="h-auto max-w-full" />
             <PercentageIllustration className="h-auto max-w-full" />

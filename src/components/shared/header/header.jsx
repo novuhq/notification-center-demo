@@ -30,7 +30,7 @@ const Header = () => {
             <span className="sr-only">Light theme icon</span>
             <LightThemeIcon className="w-5" aria-hidden />
           </Button>
-          <div className="border-grey-4 relative flex h-[46px] w-[46px] items-center justify-center rounded-full border bg-white sm:h-[38px] sm:w-[38px]">
+          <div className="relative flex h-[46px] w-[46px] items-center justify-center rounded-full border border-gray-4 bg-white sm:h-[38px] sm:w-[38px]">
             <BellIcon className="w-6" aria-label="Notifications bell icon" />
             {unseenCount ? (
               <span
