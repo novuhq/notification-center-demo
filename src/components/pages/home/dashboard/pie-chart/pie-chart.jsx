@@ -32,8 +32,10 @@ const PieChart = ({ className, value }) => (
           transition={{ duration: 0.5, bounce: 0 }}
         />
       </svg>
-
-      <h3 className="absolute text-[44px] text-white">{value}%</h3>
+      <div className="absolute flex flex-col items-center">
+        <h3 className="text-[44px] text-white">{value}%</h3>
+        <span className="absolute -bottom-5 block h-3.5 w-[67px] rounded-[10px] bg-gray-3" />
+      </div>
     </div>
 
     <div className="flex space-x-5">
