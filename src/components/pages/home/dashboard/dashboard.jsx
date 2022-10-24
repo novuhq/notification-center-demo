@@ -7,7 +7,7 @@ import useUserUuid from 'hooks/use-user-uuid';
 import Notifications from '../notifications/notifications';
 
 import Chart from './chart';
-import NodesIllustration from './images/nodes-illustration.inline.svg';
+import nodesIllustration from './images/nodes-illustration.url.svg';
 import PieChart from './pie-chart';
 import ProgressWithPercentage from './progress-with-percentage';
 
@@ -99,7 +99,7 @@ const Dashboard = () => {
         <div className="w-1/2 sm:hidden">
           <PieChart value={pieChartAnimationValues[tickCount]} />
           <div className="mt-5 hidden flex-col space-y-5 md:flex">
-            <NodesIllustration className="h-auto max-w-full" />
+            <img className="h-auto max-w-full" src={nodesIllustration} alt="" />
             <ProgressWithPercentage
               value1={progressWithPercentageAnimationValues1[tickCount]}
               value2={progressWithPercentageAnimationValues2[tickCount]}
@@ -107,7 +107,7 @@ const Dashboard = () => {
           </div>
         </div>
         <div className="flex w-1/2 flex-col justify-between space-y-10 lg:justify-start md:hidden">
-          <NodesIllustration className="h-auto w-[400px] max-w-full" />
+          <img className="h-auto w-[400px] max-w-full" src={nodesIllustration} alt="" />
           <ProgressWithPercentage
             value1={progressWithPercentageAnimationValues1[tickCount]}
             value2={progressWithPercentageAnimationValues2[tickCount]}
