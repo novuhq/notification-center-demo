@@ -11,7 +11,7 @@ const styles = {
   size: {},
 
   theme: {
-    rounded: 'p-3 rounded-full border border-grey-4 sm:p-2',
+    rounded: 'p-3 rounded-full border border-gray-4 sm:p-2',
   },
 };
 

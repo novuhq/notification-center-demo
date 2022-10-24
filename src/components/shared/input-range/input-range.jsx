@@ -9,6 +9,7 @@ const InputRange = ({ className, ...otherProps }) => (
       className
     )}
   >
+    <div className="absolute -inset-6 hidden md:block" />
     <input
       className="input-range relative flex h-full w-full appearance-none items-center bg-transparent focus:outline-none"
       type="range"

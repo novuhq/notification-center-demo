@@ -27,7 +27,7 @@ const Chart = ({ rangeValue }) => {
   return (
     <div className="relative">
       <ImagePlaceholder width={820} height={260} />
-      <div className="lg:scrollbar-hidden absolute top-0 left-0 h-full w-full lg:overflow-x-hidden lg:rounded-md">
+      <div className="lg:scrollbar-hidden absolute top-0 left-0 h-full w-full lg:overflow-x-hidden lg:rounded-md lg:border-l lg:border-l-gray-3">
         <div
           className="absolute inset-0 -z-20 xl:pr-4 lg:left-auto lg:h-[250px] lg:w-[810px]"
           ref={animationRef}
