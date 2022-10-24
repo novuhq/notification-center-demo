@@ -85,7 +85,7 @@ const Dashboard = () => {
       </div>
       <div className="flex space-x-10 xl:space-x-5 sm:space-x-0" aria-hidden>
         <div className="w-1/2 sm:hidden">
-          <PieChart value={65} />
+          <PieChart />
           <div className="mt-5 hidden flex-col space-y-5 md:flex">
             <NodesIllustration className="h-auto max-w-full" />
             <ProgressWithPercentage value1={25} value2={72} />
