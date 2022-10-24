@@ -9,6 +9,8 @@
 
 /* Components */
 @import './container.css';
+@import '../components/shared/input-range/input-range.css';
+@import '../components/pages/home/notifications/notifications.css';
 
 /* Utilities */
 @import './remove-autocomplete-styles.css';

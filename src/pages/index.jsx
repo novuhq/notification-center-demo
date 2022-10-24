@@ -1,17 +1,19 @@
 import React from 'react';
 
-import Link from 'components/shared/link';
-import ArrowIcon from 'icons/arrow.inline.svg';
+import Dashboard from 'components/pages/home/dashboard';
+import Notifications from 'components/pages/home/notifications';
+import Sidebar from 'components/pages/home/sidebar';
 import LayoutMain from 'layouts/layout-main';
 
 const Home = () => (
   <LayoutMain>
-    <div className="text-lg">
-      <h1>Pixel Point Next.js Tailwind Starter</h1>
-      <Link className="text-[red] transition-colors duration-200 hover:text-[black]" to="/about">
-        Test Link
-        <ArrowIcon className="ml-2 inline-flex w-5" />
-      </Link>
+    <h1 className="sr-only">Novu dashboard demo page</h1>
+    <div className="container main-wrapper pb-10 lg:overflow-x-hidden">
+      <div className="relative grid grid-cols-[65px_1fr_375px] gap-x-10 xl:gap-x-5 lg:grid-cols-[65px_1fr_300px] md:grid-cols-[1fr]">
+        <Sidebar />
+        <Dashboard />
+        <Notifications className="md:hidden" />
+      </div>
     </div>
   </LayoutMain>
 );
