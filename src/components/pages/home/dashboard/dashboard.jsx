@@ -12,12 +12,12 @@ import PercentageIllustration from './images/percentage-illustration.inline.svg'
 import PieChartIllustration from './images/pie-chart-illustration.inline.svg';
 
 const cpuAnimationValues = [
-  30, 40, 80, 50, 28, 60, 70, 90, 20, 10, 100, 20, 30, 40, 80, 50, 28, 60, 70, 90, 20, 10, 100, 20,
-  30, 40, 80, 50, 28, 60,
+  40, 42, 47, 44, 50, 54, 60, 58, 62, 64, 66, 68, 70, 68, 66, 64, 62, 60, 58, 54, 56, 60, 62, 64,
+  66, 68, 70, 68, 66, 64,
 ];
 const ramAnimationValues = [
-  2, 6, 35, 20, 5, 10, 15, 30, 1, 2, 50, 1, 2, 6, 35, 20, 5, 10, 15, 30, 1, 2, 50, 1, 2, 6, 35, 20,
-  5, 10,
+  50, 52, 57, 54, 60, 58, 54, 52, 51, 53, 55, 58, 54, 52, 50, 54, 56, 58, 60, 58, 54, 52, 51, 53,
+  55, 58, 54, 52, 50, 54,
 ];
 
 const Dashboard = () => {
