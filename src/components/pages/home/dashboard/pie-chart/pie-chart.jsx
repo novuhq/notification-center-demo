@@ -27,6 +27,7 @@ const PieChart = ({ className, value }) => (
           stroke="#808080"
           strokeWidth="14"
           strokeLinecap="round"
+          initial={{ pathLength: 0 }}
           animate={{ pathLength: value / 100 }}
           transition={{ duration: 0.5, bounce: 0 }}
         />
