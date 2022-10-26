@@ -32,10 +32,10 @@ const theme = {
 };
 
 const footer = () => (
-  <footer className="row-start-3 py-3 text-center text-[13px] leading-none text-gray-5">
+  <footer className="row-start-3 flex items-center justify-center gap-2 py-3 text-center text-[10px] leading-none text-gray-5">
     Powered by{' '}
-    <a className="text-white" href="https://novu.co/" target="_blank" rel="noreferrer">
-      Novu
+    <a href="https://novu.co/" target="_blank" rel="noreferrer">
+      <img src="/static/images/logo-light.svg" alt="Novu" className="inline-block h-4 w-16" />
     </a>
   </footer>
 );
