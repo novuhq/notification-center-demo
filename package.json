@@ -10,6 +10,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "setup:project": "node src/scripts/setup-env.files.js",
     "format": "prettier --write .",
     "lint": "npm run lint:js & npm run lint:styles",
     "lint:fix": "npm run lint:js:fix & npm run lint:styles:fix",
