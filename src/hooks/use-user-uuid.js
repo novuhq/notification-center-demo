@@ -11,7 +11,7 @@ export default function useUserUuid() {
       setUserUuid(uuid);
     } else {
       // generate uuid
-      const newUuid = uuidv4();
+      const newUuid = process.env.NEXT_PUBLIC_SUBSCRIBER_ID ?? uuidv4();
       // save uuid to local storage
       localStorage.setItem('widget_user_uuid', newUuid);
       setUserUuid(newUuid);
