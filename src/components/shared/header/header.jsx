@@ -11,7 +11,7 @@ import NavigationIllustration from 'icons/nav-illustration.inline.svg';
 
 const Header = () => {
   const { notifications } = useNotifications();
-  const unseenCount = notifications.filter((message) => !message.seen).length;
+  const unseenCount = notifications?.filter((message) => !message.seen).length;
 
   return (
     <header className="safe-paddings">

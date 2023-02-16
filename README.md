@@ -19,7 +19,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 1. Clone this repository or hit "Use this template" button
 
 ```bash
-git clone git@github.com:pixel-point/nextjs-tailwind-starter.git
+git clone git@github.com:novuhq/notification-center-demo.git
 ```
 
 2. Install dependencies
