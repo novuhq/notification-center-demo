@@ -1,8 +1,6 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 
-import InputRange from 'components/shared/input-range';
 import LoadingBar from 'components/shared/loading-bar';
-import useUserUuid from 'hooks/use-user-uuid';
 
 import Notifications from '../notifications/notifications';
 
@@ -33,22 +31,7 @@ const progressWithPercentageAnimationValues2 = [
 ];
 
 const Dashboard = () => {
-  const userUuid = useUserUuid();
-
-  const [rangeValue, setRangeValue] = useState(250);
   const [tickCount, setTickCount] = useState(0);
-  const [currentAnimationFrameValue, setCurrentAnimationFrameValue] = useState(0);
-
-  const handleRangeChange = useCallback((e) => {
-    setRangeValue(Number(e.target.value));
-  }, []);
-
-  const sendMessage = useCallback(async () => {
-    await fetch('/api/send-message', {
-      method: 'POST',
-      body: JSON.stringify({ uuid: userUuid }),
-    });
-  }, [userUuid]);
 
   useEffect(() => {
     if (tickCount === 29) {
@@ -62,16 +45,6 @@ const Dashboard = () => {
     };
   }, [tickCount]);
 
-  useEffect(() => {
-    setCurrentAnimationFrameValue(window.lottieAnimation.currentFrame);
-  }, [tickCount]);
-
-  useEffect(() => {
-    if (currentAnimationFrameValue >= rangeValue) {
-      sendMessage();
-    }
-  }, [currentAnimationFrameValue, rangeValue, sendMessage]);
-
   return (
     <div className="safe-paddings flex flex-col justify-between space-y-10 xl:space-y-5 sm:justify-start">
       <ul className="flex space-x-10 xl:space-x-5 lg:justify-between">
@@ -82,18 +55,8 @@ const Dashboard = () => {
           <LoadingBar id="ram" name="RAM" maxValue={ramAnimationValues[tickCount]} />
         </li>
       </ul>
-      <div className="relative flex lg:min-h-[250px] lg:max-w-[790px] sm:min-h-[250px]">
-        <Chart rangeValue={rangeValue} />
-        <div className="absolute bottom-0 right-0 block">
-          <InputRange
-            className="absolute bottom-0 -right-[103px] block h-[20px] w-[208px] -translate-y-[93px] -rotate-90"
-            type="range"
-            min="100"
-            max="300"
-            value={rangeValue}
-            onChange={handleRangeChange}
-          />
-        </div>
+      <div className="relative flex lg:min-h-[250px] sm:min-h-[250px]">
+        <Chart />
       </div>
       <div className="flex space-x-10 xl:space-x-5 sm:space-x-0" aria-hidden>
         <div className="w-1/2 sm:hidden">
