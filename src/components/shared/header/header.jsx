@@ -31,12 +31,12 @@ const Header = () => {
       <div className="container flex items-center py-8">
         <Link className="mx-3 sm:ml-0" to="/">
           <span className="sr-only">Acme corporation logo</span>
-          <Logo className="w-[150px] xs:w-[120px]" />
+          <Logo className="w-[150px] sm:w-[120px]" />
         </Link>
         <NavigationIllustration className="mx-8 max-w-[510px] lg:max-w-[300px] md:hidden" />
         <div className="ml-auto flex items-center space-x-5 sm:space-x-3">
           <Button
-            className="h-10 w-full cursor-pointer rounded px-6 text-sm font-medium uppercase"
+            className="h-10 w-full cursor-pointer rounded px-6 text-sm font-medium uppercase sm:px-3.5"
             theme="pink-to-yellow-gradient"
             type="button"
             state={buttonState}
