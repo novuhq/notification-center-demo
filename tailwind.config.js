@@ -1,4 +1,6 @@
 /* eslint-disable global-require */
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   corePlugins: {
@@ -34,6 +36,11 @@ module.exports = {
         10: '#E6E6E6',
       },
     }),
+    backgroundImage: {
+      'pink-yellow-gradient':
+        'linear-gradient(257.22deg, #FFBB33 21.09%, #E300BD 55.18%, #FF006A 92.64%)',
+      ...defaultTheme.backgroundImage,
+    },
     screens: {
       '2xl': { max: '1919px' },
       xl: { max: '1380px' },

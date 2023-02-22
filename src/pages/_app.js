@@ -12,6 +12,8 @@ const MyApp = ({ Component, pageProps }) => {
     <NovuProvider
       subscriberId={userUuid}
       applicationIdentifier={process.env.NEXT_PUBLIC_NOVU_APP_ID}
+      backendUrl={process.env.NEXT_PUBLIC_API_URL}
+      socketUrl={process.env.NEXT_PUBLIC_WS_URL}
     >
       <Component {...pageProps} />
     </NovuProvider>

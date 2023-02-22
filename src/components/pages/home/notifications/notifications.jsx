@@ -42,7 +42,9 @@ const footer = () => (
 
 const Notifications = ({ className, ...otherProps }) => {
   const onNotificationClick = useCallback((notification) => {
-    window.location.href = notification.cta.data.url;
+    if (notification?.cta?.data?.url) {
+      window.location.href = notification.cta.data.url;
+    }
   }, []);
 
   return (
