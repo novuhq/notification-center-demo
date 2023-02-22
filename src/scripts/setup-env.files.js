@@ -25,7 +25,8 @@ const envVars = envFile.split('\n').reduce((acc, line) => {
 // Override existing environment variables or create new ones
 const appId = process.argv[2];
 const apiKey = process.argv[3];
-const environment = process.argv[4];
+const backendUrl = process.argv[4];
+const socketUrl = process.argv[5];
 
 if (appId) {
   envVars[APP_ID] = appId;
@@ -35,9 +36,9 @@ if (apiKey) {
   envVars[API_KEY] = apiKey;
 }
 
-if (environment === 'dev') {
-  envVars[API_URL] = 'https://dev.api.novu.co';
-  envVars[WS_URL] = 'https://dev.ws.novu.co';
+if (backendUrl && socketUrl) {
+  envVars[API_URL] = backendUrl;
+  envVars[WS_URL] = socketUrl;
 }
 
 // Write the updated contents back to the .env file
