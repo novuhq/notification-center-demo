@@ -12,6 +12,9 @@ export default async function handler(req, res) {
     to: {
       subscriberId: uuid,
     },
+    payload: {
+      __source: 'notification-center-demo-app'
+    }
   });
 
   return res.json({ finish: true });
