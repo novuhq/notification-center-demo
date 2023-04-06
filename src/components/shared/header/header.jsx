@@ -30,7 +30,6 @@ const Header = () => {
     <header className="safe-paddings">
       <div className="container flex items-center py-8">
         <Link className="mx-3 sm:ml-0" to="/">
-          <span className="sr-only">Acme corporation logo</span>
           <Logo className="w-[150px] sm:w-[120px]" />
         </Link>
         <NavigationIllustration className="mx-8 max-w-[510px] lg:max-w-[300px] md:hidden" />
