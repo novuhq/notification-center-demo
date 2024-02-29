@@ -2,7 +2,7 @@ repo_name: novuhq/notification-center-demo
 report_id: 06216ca1d722643a61a8bcb71d30d85a
 version: 0.1
 repo_type: Public
-timestamp: '2024-01-05T09:22:41+00:00'
+timestamp: '2024-02-29T18:06:01+00:00'
 requested_by: scopsy
 provider: github
 branch: main
@@ -42,7 +42,7 @@ tools:
   last_updated_by: Andrew Golovanov
   last_updated_on: 2022-10-13 08:16:40.000000000 Z
 - name: Next.js
-  description: 'A small framework for server-rendered universal JavaScript apps '
+  description: A small framework for server-rendered universal JavaScript apps
   website_url: https://nextjs.org/
   version: 12.3.1
   open_source: true
@@ -92,7 +92,7 @@ tools:
   detection_source_url: https://github.com/novuhq/notification-center-demo
   detection_source: Repo Metadata
 - name: Prettier
-  description: 'Prettier is an opinionated code formatter. '
+  description: Prettier is an opinionated code formatter.
   website_url: https://prettier.io/
   version: 2.7.1
   license: MIT
