@@ -30,6 +30,9 @@ npm install
 
 ## Usage
 
+1. Navigate to `notification-center-demo/.env.example` and input your Novu credentials.
+
+2. Run the following command:
 ```bash
 npm run dev
 ```
